@@ -1,0 +1,222 @@
+@use "./mixins.scss" as *;
+@use "./globalrules" as *;
+
+/* start landing*/
+.landing {
+  position: relative;
+  background-image: url(../images/desktop/image-hero.jpg);
+  background-size: cover;
+  height: 70vh;
+  &::before {
+    @include over-Lay(#000, 0.5);
+  }
+  .container {
+    position: relative;
+  }
+  header {
+    position: relative;
+    nav {
+      .bars {
+        color: #fff;
+        font-size: 40px;
+        display: none;
+      }
+      @include mediaQueries(mobile) {
+        ul {
+          position: absolute;
+          top: 108%;
+          left: 0;
+          flex-direction: column;
+          width: 100%;
+          background-color: #fff;
+          border-radius: 8px;
+          max-height: 0;
+          overflow: hidden;
+          pointer-events: none;
+          transition: 0.5s;
+          padding: 0 !important;
+          li {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 20px;
+            border-bottom: 1px solid #dedede;
+            a {
+              color: #000 !important;
+            }
+          }
+          &.active {
+            max-height: 285px;
+            pointer-events: auto;
+            padding: 15px !important;
+            overflow: visible;
+          }
+        }
+        .bars {
+          display: block !important;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  li {
+    padding: 0 10px;
+    a,
+    a.active {
+      text-decoration: none;
+      color: #fff !important;
+      transition: 0.3s;
+      &:hover {
+        color: #000 !important;
+      }
+    }
+  }
+  .text {
+    width: 40%;
+    margin-top: 100px;
+    border: 2px solid #fff;
+    padding: 20px 30px;
+    @include mediaQueries("mobile") {
+      width: 100%;
+    }
+    @include mediaQueries("med") {
+      width: 70%;
+    }
+    @include mediaQueries("large") {
+      width: 50%;
+    }
+    h1 {
+      color: #fff;
+      font-size: 50px;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+    }
+  }
+}
+/* end landing*/
+
+/* start var*/
+.vr-section {
+  position: relative;
+  .row {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      align-items: center !important;
+    }
+  }
+
+  .text-var {
+    padding: 50px 60px;
+    background-color: #fff;
+    position: absolute;
+    right: 280px;
+    bottom: 0px;
+    h2 {
+      font-size: 40px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+    p {
+      font-size: 14px;
+      color: rgba(#000, 0.5);
+    }
+    @media (max-width: 991px) {
+      & {
+        text-align: center;
+      }
+    }
+    @media (max-width: 1199px) {
+      & {
+        position: relative !important;
+        right: 0 !important;
+        padding: 15px;
+        h2 {
+          font-size: 35px;
+        }
+        p {
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
+
+/* end var*/
+/* start creation*/
+.creation {
+  margin-bottom: 200px;
+  .head {
+    h3 {
+      text-transform: uppercase;
+      font-size: 35px;
+    }
+    button {
+      background: none;
+      padding: 5px 35px;
+      text-transform: uppercase;
+      &:hover {
+        background-color: #222;
+        color: #fff;
+        transition: 0.3s;
+      }
+    }
+  }
+  .box {
+    position: relative;
+    &::before {
+      @include over-Lay(#000, 0.5);
+      width: calc(100% - 24px);
+      left: 12px;
+    }
+    h4 {
+      position: absolute;
+      bottom: 25px;
+      left: 30px;
+      color: rgba(#fff, 0.8);
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+/* end creation*/
+/* start footer*/
+footer {
+  background-color: #000;
+  .logo,
+  .social-icons {
+    margin-bottom: 40px;
+  }
+  .nav {
+    li {
+      padding: 0 5px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+  .social-icons {
+    li {
+      margin-right: 15px;
+    }
+  }
+  .copyright {
+    color: #fff;
+  }
+  @include mediaQueries(mobile) {
+    & {
+      .row {
+        gap: 25px;
+        .left,
+        .right {
+          text-align: center;
+          ul {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+/* end footer*/
