@@ -97,6 +97,9 @@ h1, h2, h3, h4, h5, h6 {
   .landing .text {
     width: 100%;
   }
+  .landing .text h1 {
+  font-size: 45px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .landing .text {
